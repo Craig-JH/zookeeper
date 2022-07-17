@@ -1,5 +1,7 @@
 const express = require("express");
 
+const PORT = process.env.PORT || 3001;
+
 //instantiate the server, then tell it to listen for requests
 const app = express();
 
@@ -56,8 +58,8 @@ app.get("/api/animals", (req, res) => {
 });
 
 //use one method to make our server listen. We're going to chain the listen() method onto our server to do it.
-app.listen(3001, () => {
-  console.log(`API server now on port 3001!`);
+app.listen(PORT, () => {
+  console.log(`API server now on port ${PORT}!`);
 });
 
 //creating a route that the front-end can request data from
